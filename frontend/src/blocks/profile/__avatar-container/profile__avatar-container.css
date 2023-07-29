@@ -1,0 +1,24 @@
+.profile__avatar-container {
+	width: 120px;
+	aspect-ratio: 1/1;
+	position: relative;
+}
+
+.profile__avatar-container::after {
+	display: none;
+	content: '';
+	background-image: url(../../../images/button-avatar.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	aspect-ratio: 1/1;
+	background-color: hsla(0, 0%, 0%, 0.8);
+	cursor: pointer;
+}
+
+.profile__avatar-container:hover::after {
+	display: block;
+}

@@ -1,0 +1,25 @@
+.welcome-form__button {
+  width: 100%;
+  margin: 105px 0 15px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 2px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.21;
+  color: hsla(0, 0%, 0%, 1);
+  padding: 13px;
+  transition: opacity .5s, border .5s, background-color .5s, color .5s;
+  border: 1px solid hsl(0, 0%, 100%);
+}
+
+.welcome-form__button:hover {
+  opacity: .8;
+  transition: opacity .5s;
+}
+
+@media screen and (max-width: 620px) {
+  .welcome-form__button {
+    padding: 12px;
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,14 @@
+.popup__form {
+	display: grid;
+	grid-template-columns: 360px;
+}
+
+.popup__form input:first-of-type {
+	margin-top: 25px;
+}
+
+@media screen and (max-width: 620px) {
+	.popup__form {
+		grid-template-columns: 238px;
+	}
+}

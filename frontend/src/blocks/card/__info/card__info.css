@@ -1,0 +1,9 @@
+.card__info {
+  margin: 22px 20px;
+  display: grid;
+  grid-template-columns: auto 22px;
+  grid-template-rows: 19px 16px;
+  grid-template-areas:
+    "place button"
+    "place count";
+}

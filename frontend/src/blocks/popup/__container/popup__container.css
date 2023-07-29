@@ -1,0 +1,23 @@
+.popup__container {
+  box-sizing: border-box;
+  position: relative;
+  max-width: 430px;
+  padding: 35px;
+  background-color: #fff;
+  box-shadow: 0px 0px 25px hsla(0, 0%, 0%, 0.15);
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 620px) {
+  .popup__container {
+    max-width: 282px;
+    padding: 25px 22px;
+    margin: 0 19px;
+  }
+}
+
+@media screen and (max-device-height: 400px) and (orientation: landscape) {
+  .popup__container {
+    padding: 20px 22px;
+  }
+}

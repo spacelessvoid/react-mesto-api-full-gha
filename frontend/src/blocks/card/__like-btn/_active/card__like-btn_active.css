@@ -1,0 +1,14 @@
+.card__like-btn_active {
+  background: url(../../../../images/button-like-sprite.svg) -22px 0;
+  animation: like-pop .4s ease-in-out;
+}
+
+@keyframes like-pop {
+  from {
+    transform: scale(130%, 130%);
+  }
+
+  to {
+    transform: scale(100%, 100%);
+  }
+}

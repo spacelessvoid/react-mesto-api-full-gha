@@ -1,0 +1,27 @@
+.profile__info {
+  margin-inline: 30px 15px;
+  color: #fff;
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 18px;
+}
+
+@media screen and (max-width: 800px) {
+  .profile__info {
+    margin-inline-start: 15px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .profile__info {
+    margin: 25px 0 0 28px;
+    column-gap: 10px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .profile__info {
+    max-width: 280px;
+  }
+}

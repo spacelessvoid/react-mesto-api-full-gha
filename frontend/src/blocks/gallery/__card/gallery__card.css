@@ -1,0 +1,11 @@
+@media screen and (max-width: 940px) {
+  .gallery__card {
+    min-width: 50%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .gallery__card {
+    width: 100%;
+  }
+}
