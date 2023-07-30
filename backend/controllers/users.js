@@ -2,12 +2,12 @@
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const User = require("../models/user");
-const { JWT_SECRET } = require("../middlewares/auth");
 const BadRequestError = require("../errors/request-error");
 const NotFoundError = require("../errors/not-found-error");
 const AuthError = require("../errors/authorization-error");
 const { CREATED, CONFLICT } = require("../errors/error-codes");
 
+const { NODE_ENV, JWT_SECRET } = process.env;
 const SALT_ROUNDS = 10;
 
 const createUser = (req, res, next) => {
@@ -124,7 +124,7 @@ const login = (req, res, next) => {
           return;
         }
 
-        const token = jwt.sign({ _id: user._id }, JWT_SECRET, {
+        const token = jwt.sign({ _id: user._id }, NODE_ENV === "production" ? JWT_SECRET : "dev-secret", {
           expiresIn: "7d",
         });
 
