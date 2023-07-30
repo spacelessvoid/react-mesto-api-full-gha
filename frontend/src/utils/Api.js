@@ -1,7 +1,6 @@
 class Api {
   constructor(options) {
     this._baseUrl = options.baseUrl;
-    this._headers = options.headers;
   }
 
   _request(endpoint, options) {
@@ -24,7 +23,7 @@ class Api {
     const token = localStorage.getItem("jwt");
     return this._request("/cards", {
       method: "POST",
-      headers: { Authorization: `Bearer ${token}` },
+      headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
       body: JSON.stringify({ name, link }),
     });
   }
@@ -40,7 +39,7 @@ class Api {
   getUserInfo() {
     const token = localStorage.getItem("jwt");
     return this._request("/users/me", {
-      headers: { Authorization: `Bearer ${token}` },
+      headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
     });
   }
 
@@ -48,7 +47,7 @@ class Api {
     const token = localStorage.getItem("jwt");
     return this._request("/users/me", {
       method: "PATCH",
-      headers: { Authorization: `Bearer ${token}` },
+      headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
       body: JSON.stringify({ name, about }),
     });
   }
@@ -57,7 +56,7 @@ class Api {
     const token = localStorage.getItem("jwt");
     return this._request("/users/me/avatar", {
       method: "PATCH",
-      headers: { Authorization: `Bearer ${token}` },
+      headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
       body: JSON.stringify(avatar),
     });
   }
