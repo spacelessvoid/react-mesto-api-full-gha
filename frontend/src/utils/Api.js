@@ -59,13 +59,13 @@ class Api {
   changeLikeCardStatus(cardID, isLiked) {
     if (isLiked === true) {
       // remove like
-      return this._request(`/cards/likes/${cardID}`, {
+      return this._request(`/cards/${cardID}/likes`, {
         method: "DELETE",
         headers: this._headers,
       });
     } else {
       // add like
-      return this._request(`/cards/likes/${cardID}`, {
+      return this._request(`/cards/${cardID}/likes`, {
         method: "PUT",
         headers: this._headers,
       });
@@ -73,10 +73,13 @@ class Api {
   }
 }
 
+const token = localStorage.getItem("jwt");
+
 export const api = new Api({
-  baseUrl: "https://mesto.nomoreparties.co/v1/cohort-64",
+  baseUrl: "http://localhost:3000",
+  // baseUrl: "https://api.mestolessvoid.nomoredomains.sbs",
   headers: {
-    authorization: "22f549e9-e0fd-461e-9588-c9d853933dcc",
     "Content-Type": "application/json",
+    Authorization: `Bearer ${token}`,
   },
 });

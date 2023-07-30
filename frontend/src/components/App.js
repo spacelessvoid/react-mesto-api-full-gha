@@ -43,20 +43,25 @@ function App() {
 
   useEffect(() => {
     handleCheckToken();
-
-    Promise.all([
-      // Fetching user profile data
-      api.getUserInfo(),
-      // Fetching initial cards
-      api.getInitialCards(),
-    ])
-      .then(([userData, cards]) => {
-        setCurrentUser(userData);
-        setCards(cards);
-      })
-      .catch(console.error);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    const token = localStorage.getItem("jwt");
+
+    if (token) {
+      Promise.all([
+        // Fetching user profile data
+        api.getUserInfo(),
+        // Fetching initial cards
+        api.getInitialCards(),
+      ])
+        .then(([userData, cards]) => {
+          setCurrentUser(userData);
+          setCards(cards);
+        })
+        .catch(console.error);
+    }
+  }, [loggedIn]);
 
   function handleEditAvatarClick() {
     setIsEditAvatarPopupOpen(true);
@@ -93,7 +98,7 @@ function App() {
   }
 
   function handleCardLike(card) {
-    const isLiked = card.likes.some(i => i._id === currentUser._id);
+    const isLiked = card.likes.some(id => id === currentUser._id);
 
     api
       .changeLikeCardStatus(card._id, isLiked)
@@ -172,11 +177,11 @@ function App() {
   function handleCheckToken() {
     setIsLoading(true);
 
-    const jwt = localStorage.getItem("jwt");
+    const token = localStorage.getItem("jwt");
 
-    if (jwt) {
-      checkToken(jwt)
-        .then(user => handleLogin(user.data))
+    if (token) {
+      checkToken(token)
+        .then(user => handleLogin(user))
         .then(() => navigate("/", { replace: true }))
         .catch(console.error)
         .finally(() => setIsLoading(false));
