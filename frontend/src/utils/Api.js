@@ -14,72 +14,73 @@ class Api {
   }
 
   getInitialCards() {
+    const token = localStorage.getItem("jwt");
     return this._request("/cards", {
-      headers: this._headers,
+      headers: { Authorization: `Bearer ${token}` },
     });
   }
 
   addNewCard({ name, link }) {
+    const token = localStorage.getItem("jwt");
     return this._request("/cards", {
       method: "POST",
-      headers: this._headers,
+      headers: { Authorization: `Bearer ${token}` },
       body: JSON.stringify({ name, link }),
     });
   }
 
   deleteCard(cardID) {
+    const token = localStorage.getItem("jwt");
     return this._request(`/cards/${cardID}`, {
       method: "DELETE",
-      headers: this._headers,
+      headers: { Authorization: `Bearer ${token}` },
     });
   }
 
   getUserInfo() {
+    const token = localStorage.getItem("jwt");
     return this._request("/users/me", {
-      headers: this._headers,
+      headers: { Authorization: `Bearer ${token}` },
     });
   }
 
   updateUserInfo({ name, about }) {
+    const token = localStorage.getItem("jwt");
     return this._request("/users/me", {
       method: "PATCH",
-      headers: this._headers,
+      headers: { Authorization: `Bearer ${token}` },
       body: JSON.stringify({ name, about }),
     });
   }
 
   updateUserAvatar(avatar) {
+    const token = localStorage.getItem("jwt");
     return this._request("/users/me/avatar", {
       method: "PATCH",
-      headers: this._headers,
+      headers: { Authorization: `Bearer ${token}` },
       body: JSON.stringify(avatar),
     });
   }
 
   changeLikeCardStatus(cardID, isLiked) {
+    const token = localStorage.getItem("jwt");
     if (isLiked === true) {
       // remove like
       return this._request(`/cards/${cardID}/likes`, {
         method: "DELETE",
-        headers: this._headers,
+        headers: { Authorization: `Bearer ${token}` },
       });
     } else {
       // add like
       return this._request(`/cards/${cardID}/likes`, {
         method: "PUT",
-        headers: this._headers,
+        headers: { Authorization: `Bearer ${token}` },
       });
     }
   }
 }
 
-const token = localStorage.getItem("jwt");
-
 export const api = new Api({
   baseUrl: "http://localhost:3000",
   // baseUrl: "https://api.mestolessvoid.nomoredomains.sbs",
-  headers: {
-    "Content-Type": "application/json",
-    Authorization: `Bearer ${token}`,
-  },
 });
