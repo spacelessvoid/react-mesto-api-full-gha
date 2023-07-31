@@ -2,7 +2,9 @@
   - Make welcome form height adaptive
 - Mobile version with the new (auth related) elements
 - Update 404 page layout
-- Form validation
+- Form validation on frontend
+- Implement cookies
+- Update readme
 
 <!-- DONE --
 - Loading indicator
