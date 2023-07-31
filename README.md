@@ -8,7 +8,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 51.250.110.32
+IP 51.250.110.32
 
 Frontend https://mestolessvoid.nomoredomains.sbs/
 
