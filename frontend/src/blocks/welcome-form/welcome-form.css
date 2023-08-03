@@ -1,5 +1,12 @@
 .welcome-form {
   max-width: 358px;
+  min-height: calc(100vh - (125px + 149px + 60px));
   margin: 0 auto;
   color: hsla(0, 0%, 100%, 1);
+}
+
+@media screen and (max-width: 500px) {
+  .welcome-form {
+    min-height: calc(100vh - (88px + 101px + 60px));
+  }
 }

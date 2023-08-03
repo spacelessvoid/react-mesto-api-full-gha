@@ -5,3 +5,9 @@
   font-weight: 900;
   text-align: center;
 }
+
+@media screen and (max-width: 620px) {
+  .welcome-form__title {
+    margin: 40px 0;
+  }
+}

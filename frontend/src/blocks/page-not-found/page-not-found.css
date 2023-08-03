@@ -1,0 +1,30 @@
+.page-not-found {
+	min-height: calc(100vh - (125px + 149px + 67px));
+	margin-top: 67px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	color: #fff;
+}
+
+.page-not-found p {
+	font-style: italic;
+}
+
+.page-not-found h2,
+.page-not-found a {
+	margin-block: 24px;
+}
+
+.page-not-found h2 {
+	font-size: 3em;
+	letter-spacing: 3px;
+}
+
+@media screen and (max-width: 500px) {
+	.page-not-found {
+		min-height: calc(100vh - (88px + 101px + 48px));
+		margin-top: 48px;
+	}
+}

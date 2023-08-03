@@ -1,13 +1,13 @@
 - Adaptive layout
-  - Make welcome form height adaptive
 - Mobile version with the new (auth related) elements
-- Update 404 page layout
 - Form validation on frontend
 - Implement cookies
 - Update readme
 - Add .env on the server
 
 <!-- DONE --
+- Update 404 page layout
+- Make welcome form height adaptive
 - Loading indicator
 - Fix login screen being visible when authed user goes to '/'
 - Fix glitch with image zoom
