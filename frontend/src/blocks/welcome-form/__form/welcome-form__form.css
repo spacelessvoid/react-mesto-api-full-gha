@@ -1,10 +1,12 @@
 .welcome-form__form {
-	display: grid;
+	min-height: calc(100vh - (125px + 149px + 160px));
+	display: flex;
+	flex-direction: column;
 }
 
 @media screen and (max-width: 620px) {
 	.welcome-form__form {
-		grid-template-columns: 1fr;
+		min-height: calc(100vh - (88px + 101px + 160px));
 		margin-inline: 10px;
 	}
 }
