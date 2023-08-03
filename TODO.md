@@ -5,6 +5,7 @@
 - Form validation on frontend
 - Implement cookies
 - Update readme
+- Add .env on the server
 
 <!-- DONE --
 - Loading indicator
