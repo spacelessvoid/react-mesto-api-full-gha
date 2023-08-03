@@ -9,7 +9,7 @@ const cors = require("cors");
 
 const app = express();
 
-const { PORT = 3000, DB_ADDRESS = "mongodb://127.0.0.1:27017/mestodb" } = process.env;
+const { PORT, DB_ADDRESS } = process.env;
 const usersRouter = require("./routes/users");
 const cardsRouter = require("./routes/cards");
 const { createUser, login } = require("./controllers/users");

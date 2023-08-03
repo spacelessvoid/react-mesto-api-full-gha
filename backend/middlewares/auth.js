@@ -25,4 +25,4 @@ const auth = (req, res, next) => {
   next();
 };
 
-module.exports = { JWT_SECRET, auth };
+module.exports = { auth };
